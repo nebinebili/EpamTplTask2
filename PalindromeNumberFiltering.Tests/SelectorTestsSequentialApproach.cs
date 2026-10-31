@@ -4,7 +4,6 @@ using static PalindromeNumberFiltering.Selector;
 
 namespace PalindromeNumberFiltering.Tests
 {
-
     [TestFixture]
     internal sealed class SelectorTestsSequentialApproach
     {

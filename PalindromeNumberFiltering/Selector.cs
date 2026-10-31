@@ -17,7 +17,7 @@ namespace PalindromeNumberFiltering
         {
             ArgumentNullException.ThrowIfNull(numbers);
 
-            List<int> list = [];
+            List<int> list = new List<int>();
 
             foreach (var number in numbers)
             {
@@ -40,7 +40,7 @@ namespace PalindromeNumberFiltering
         {
             ArgumentNullException.ThrowIfNull(numbers);
 
-            ConcurrentBag<int> result = [];
+            ConcurrentBag<int> result = new ConcurrentBag<int>();
 
             _ = Parallel.ForEach(numbers, number =>
             {
@@ -83,9 +83,9 @@ namespace PalindromeNumberFiltering
                 return true;
             }
 
-            int right = number / (int)Math.Pow(10, divider) % 10;
+            int right = (number / (int)Math.Pow(10, divider)) % 10;
 
-            int left = number / (int)Math.Pow(10, length - divider - 1) % 10;
+            int left = (number / (int)Math.Pow(10, length - divider - 1)) % 10;
 
             if (left != right)
             {
